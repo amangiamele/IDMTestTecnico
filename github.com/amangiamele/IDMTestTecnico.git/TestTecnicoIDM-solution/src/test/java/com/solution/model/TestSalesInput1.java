@@ -15,7 +15,7 @@ public class TestSalesInput1 {
 		
 		Product book = new Product(0.0, "Book", 12.49);
 		Product cdMusic = new Product(0.1, "music CD", 14.99);
-		Product chocolateBar = new Product(0.0, "chocolate bar", 12.49);
+		Product chocolateBar = new Product(0.0, "chocolate bar", 0.85);
 		
 		sales.buyProduct(book);
 		sales.buyProduct(cdMusic);
@@ -35,7 +35,7 @@ public class TestSalesInput1 {
 	
 	@Test
     public void priceInput1() {
-		assertEquals(65.15 , sales.price(), 0);
+		assertEquals(29.83 , sales.price(), 0);
     }
 	
 //	@Test

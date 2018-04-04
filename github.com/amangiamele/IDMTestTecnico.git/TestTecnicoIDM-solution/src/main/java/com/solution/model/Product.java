@@ -6,12 +6,12 @@ public class Product {
 
 	private double taxRate;
 	private String name;
-	private double price;
+	private double netPrice;
 
 	public Product(double taxRate, String name, double price) {
 		this.taxRate = taxRate;
 		this.name = name;
-		this.price = price;
+		this.netPrice = price;
 	}
 	
 	public double getTaxRate() {
@@ -26,15 +26,25 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public double getNetPrice() {
+		return netPrice;
+	}
+	public void setNetPrice(double price) {
+		this.netPrice = price;
+	}
+	
 	public double getPrice() {
+		double price = netPrice + getAmountTax();
+		price = Math.round(price * 100.0) / 100.0;
 		return price;
 	}
 	public void setPrice(double price) {
-		this.price = price;
+		this.netPrice = price;
 	}
 	
 	public double getAmountTax() {
-		double amountTax = price * taxRate;
+		double amountTax = netPrice * taxRate;
 		return roundTax(amountTax);
 	}
 	
@@ -43,12 +53,6 @@ public class Product {
 		tempValue = Math.round(tempValue);
 		tempValue = tempValue / 20;
 		return tempValue;
-	}
-	
-	public double getNetPrice() {
-		double price = getPrice();
-		double amountTax = getAmountTax();
-		return price - amountTax;
 	}
 	
 	public String toString() {
