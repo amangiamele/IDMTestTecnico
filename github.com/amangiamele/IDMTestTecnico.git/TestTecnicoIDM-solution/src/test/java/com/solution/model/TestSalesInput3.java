@@ -17,10 +17,10 @@ public class TestSalesInput3 {
 		Product headPills = new Product(0.0, "packet of headache pills", 9.75);
 		Product importedBoxChocolate = new Product(0.05, " imported box of chocolates", 11.85);
 		
-		sales.addProduct(importedProfume);
-		sales.addProduct(bottleProfumes);
-		sales.addProduct(headPills);
-		sales.addProduct(importedBoxChocolate);
+		sales.buyProduct(importedProfume);
+		sales.buyProduct(bottleProfumes);
+		sales.buyProduct(headPills);
+		sales.buyProduct(importedBoxChocolate);
 	}
 	
 	@Test

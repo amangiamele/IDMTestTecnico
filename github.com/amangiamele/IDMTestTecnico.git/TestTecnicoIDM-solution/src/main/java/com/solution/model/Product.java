@@ -1,5 +1,7 @@
 package com.solution.model;
 
+import java.util.Objects;
+
 public class Product {
 
 	private double taxRate;
@@ -37,6 +39,31 @@ public class Product {
 	}
 	
 	private double roundTax(double value) {
-		return Math.round(value * 20) / 20;
+		double tempValue = value * 20;
+		tempValue = Math.round(tempValue);
+		tempValue = tempValue / 20;
+		return tempValue;
 	}
+	
+	public double getNetPrice() {
+		double price = getPrice();
+		double amountTax = getAmountTax();
+		return price - amountTax;
+	}
+	
+	public String toString() {
+		return getName() + ": " + getNetPrice();
+	}
+	
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) {
+        	return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+        	return false;
+        }
+        Product product = (Product) o;
+        return Objects.equals(name, product.getName());
+    }
 }

@@ -16,8 +16,8 @@ public class TestSalesInput2 {
 		Product importedBoxChocolate = new Product(0.05, "Imported Box Chocolate", 10.00);
 		Product importedProfume = new Product(0.15, "Imported Profume", 47.50);
 		
-		sales.addProduct(importedBoxChocolate);
-		sales.addProduct(importedProfume);
+		sales.buyProduct(importedBoxChocolate);
+		sales.buyProduct(importedProfume);
 	}
 	
 	@Test
