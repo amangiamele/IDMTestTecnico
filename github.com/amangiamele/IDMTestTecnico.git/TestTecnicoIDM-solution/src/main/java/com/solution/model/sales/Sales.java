@@ -68,7 +68,7 @@ public class Sales {
 			totalPruductTaxes = tmp.getAmountTax() * productNumber;
 			totalTax = totalTax + totalPruductTaxes;
 		}
-		return Math.round(totalTax * 100.0) / 100.0;
+		return Math.round(totalTax * 100.00) / 100.00;
 	}
 	
 	public double price() {
@@ -84,7 +84,7 @@ public class Sales {
 			totalPrice = totalPrice + totalPruductPrice;
 			
 		}
-		return Math.round(totalPrice * 100.0) / 100.0;
+		return Math.round(totalPrice * 100.00) / 100.00;
 	}
 	
 	public String toString() {
@@ -96,6 +96,6 @@ public class Sales {
 		}
 		ris = ris + "Sales Taxes: " + getTaxes() + "\n";
 		
-		return "Total: " + price();
+		return ris + "Total: " + price();
 	}
 }
