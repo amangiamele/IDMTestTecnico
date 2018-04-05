@@ -50,9 +50,23 @@ public class Product {
 	}
 	
 	private double roundTax(double value) {
-		double tempValue = value * 20;
+//		double tempValue = value * 20;
+//		tempValue = Math.round(tempValue);
+//		tempValue = tempValue / 20;
+		double tempValue = value;
+		int restoTmpValue = 0;
+		
+		tempValue = tempValue * 100.0;
 		tempValue = Math.round(tempValue);
-		tempValue = tempValue / 20;
+		
+		restoTmpValue = (int) (tempValue%5);
+		
+		if(restoTmpValue != 0) {
+			tempValue = tempValue  + (5 - restoTmpValue);
+		}
+		
+		tempValue = tempValue/100.0;
+		
 		return tempValue;
 	}
 	

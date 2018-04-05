@@ -57,23 +57,23 @@ public class Sales {
 	}
 	
 	public double getTaxes() {
-		double totalTax = 0;
+		double totalTax = 0.0;
 		Product tmp;
 		for(int i = 0; i < products.size(); i++) {
 			tmp = products.get(i);
 			totalTax = totalTax + tmp.getAmountTax();
 		}
-		return totalTax;
+		return Math.round(totalTax * 100.0) / 100.0;
 	}
 	
 	public double price() {
-		double totalPrice = 0;
+		double totalPrice = 0.0;
 		Product tmp;
 		for(int i = 0; i < products.size(); i++) {
 			tmp = products.get(i);
 			totalPrice = totalPrice + tmp.getPrice();
 		}
-		return totalPrice;
+		return Math.round(totalPrice * 100.0) / 100.0;
 	}
 	
 	public String toString() {
