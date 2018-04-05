@@ -1,10 +1,14 @@
-package com.solution.model;
+package com.solution.model.salses;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import com.solution.model.CategoryProductEnum;
+import com.solution.model.Product;
+import com.solution.model.Sales;
 
 public class TestSalesInput1 {
 	private Sales sales = new Sales();

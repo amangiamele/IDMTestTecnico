@@ -1,9 +1,13 @@
-package com.solution.model;
+package com.solution.model.salses;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.solution.model.CategoryProductEnum;
+import com.solution.model.Product;
+import com.solution.model.Sales;
 
 public class TestSalesInput3 {
 	private Sales sales = new Sales();
@@ -36,45 +40,5 @@ public class TestSalesInput3 {
 	@Test
     public void priceInput3() {
 		assertEquals(74.68 , sales.price(), 0);
-    }
-	
-	@Test
-    public void taxesImportedProfumeInput3() {
-		assertEquals(4.2 , importedProfume.getAmountTax(), 0);
-    }
-	
-	@Test
-    public void taxesProfumeInput3() {
-		assertEquals(1.9 , bottleProfumes.getAmountTax(), 0);
-    }
-	
-	@Test
-    public void taxesHeadPillsInput3() {
-		assertEquals(0.0 , headPills.getAmountTax(), 0);
-    }
-	
-	@Test
-    public void taxesImportedBoxChocolatenput3() {
-		assertEquals(0.6 , importedBoxChocolate.getAmountTax(), 0);
-    }
-	
-	@Test
-    public void priceImportedProfumeInput3() {
-		assertEquals(32.19 , importedProfume.getPrice(), 0);
-    }
-	
-	@Test
-    public void priceProfumeInput3() {
-		assertEquals(20.89 , bottleProfumes.getPrice(), 0);
-    }
-	
-	@Test
-    public void priceHeadPillsInput3() {
-		assertEquals(9.75 , headPills.getPrice(), 0);
-    }
-	
-	@Test
-    public void priceImportedBoxChocolatenput3() {
-		assertEquals(11.85 , importedBoxChocolate.getPrice(), 0);
     }
 }
