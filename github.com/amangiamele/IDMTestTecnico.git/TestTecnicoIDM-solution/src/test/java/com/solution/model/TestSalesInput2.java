@@ -13,8 +13,8 @@ public class TestSalesInput2 {
 	public void init() {
 		sales = new Sales();
 		
-		Product importedBoxChocolate = new Product(0.05, "Imported Box Chocolate", 10.00);
-		Product importedProfume = new Product(0.15, "Imported Profume", 47.50);
+		Product importedBoxChocolate = new Product(0.05, "Imported Box Chocolate", 10.00, CategoryProductEnum.NO_TAXED_PRODCUT);
+		Product importedProfume = new Product(0.15, "Imported Profume", 47.50, CategoryProductEnum.TAXED_PRODCUT);
 		
 		sales.buyProduct(importedBoxChocolate);
 		sales.buyProduct(importedProfume);

@@ -3,19 +3,24 @@ package com.solution.model;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TestSalesInput1 {
 	private Sales sales = new Sales();
 	private String expectedPrint;
 	
+	private Product book;
+	private Product cdMusic;
+	private Product chocolateBar;
+	
 	@Before
 	public void init() {
 		sales = new Sales();
 		
-		Product book = new Product(0.0, "Book", 12.49);
-		Product cdMusic = new Product(0.1, "music CD", 14.99);
-		Product chocolateBar = new Product(0.0, "chocolate bar", 0.85);
+		book = new Product(0.0, "Book", 12.49, CategoryProductEnum.NO_TAXED_PRODCUT);
+		cdMusic = new Product(0.1, "music CD", 14.99, CategoryProductEnum.TAXED_PRODCUT);
+		chocolateBar = new Product(0.0, "chocolate bar", 0.85, CategoryProductEnum.NO_TAXED_PRODCUT);
 		
 		sales.buyProduct(book);
 		sales.buyProduct(cdMusic);
@@ -29,17 +34,15 @@ public class TestSalesInput1 {
 	}
 	
 	@Test
-    public void taxesInput1() {
+    public void taxesSalsesInput1() {
+		
+		
 		assertEquals(1.50 , sales.getTaxes(), 0);
     }
 	
 	@Test
-    public void priceInput1() {
+    public void priceSalesInput1() {
 		assertEquals(29.83 , sales.price(), 0);
     }
 	
-//	@Test
-//    public void toStringInput1() {
-//		assertEquals(expectedPrint , sales.toString());
-//    }
 }

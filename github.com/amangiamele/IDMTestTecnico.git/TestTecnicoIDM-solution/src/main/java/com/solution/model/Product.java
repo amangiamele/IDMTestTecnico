@@ -7,11 +7,12 @@ public class Product {
 	private double taxRate;
 	private String name;
 	private double netPrice;
+	private String category;
 
-	public Product(double taxRate, String name, double price) {
+	public Product(double taxRate, String name, double netPrice, String category) {
 		this.taxRate = taxRate;
 		this.name = name;
-		this.netPrice = price;
+		this.netPrice = netPrice;
 	}
 	
 	public double getTaxRate() {
@@ -56,7 +57,7 @@ public class Product {
 	}
 	
 	public String toString() {
-		return getName() + ": " + getNetPrice();
+		return getName() + ": " + getPrice();
 	}
 	
 	@Override
@@ -70,4 +71,43 @@ public class Product {
         Product product = (Product) o;
         return Objects.equals(name, product.getName());
     }
+	
+	public static Product getNoTaxProduct(boolean imported, String productName, double netPrice) {
+		double taxRate = 0.0;
+		if(imported) {
+			taxRate = taxRate + 0.05;
+		}
+		
+		return new Product(taxRate, productName, netPrice, CategoryProductEnum.NO_TAXED_PRODCUT);
+	}
+	
+	public static Product getTaxProduct(boolean imported, String productName, double netPrice) {
+		double taxRate = 0.1;
+		if(imported) {
+			taxRate = taxRate + 0.05;
+		}
+		
+		return new Product(taxRate, productName, netPrice, CategoryProductEnum.TAXED_PRODCUT);
+	}
+	
+	public static Product getProduct(boolean imported, String productName, double netPrice, String category) {
+		
+		Product prd = null;
+		if(CategoryProductEnum.NO_TAXED_PRODCUT.equals(category)) {
+			prd = getNoTaxProduct(imported, productName, netPrice);
+		}else if(CategoryProductEnum.TAXED_PRODCUT.equals(category)){
+			prd = getTaxProduct(imported, productName, netPrice);
+		}
+		
+		return prd;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	
 }

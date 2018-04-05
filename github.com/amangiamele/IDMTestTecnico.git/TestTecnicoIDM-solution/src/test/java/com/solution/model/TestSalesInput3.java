@@ -17,10 +17,10 @@ public class TestSalesInput3 {
 	public void init() {
 		sales = new Sales();
 		
-		importedProfume = new Product(0.15, "Imported Profume", 27.99);
-		bottleProfumes = new Product(0.1, "Bottle Profume", 18.99);
-		headPills = new Product(0.0, "packet of headache pills", 9.75);
-		importedBoxChocolate = new Product(0.05, " imported box of chocolates", 11.25);
+		importedProfume = new Product(0.15, "Imported Profume", 27.99, CategoryProductEnum.TAXED_PRODCUT);
+		bottleProfumes = new Product(0.1, "Bottle Profume", 18.99, CategoryProductEnum.TAXED_PRODCUT);
+		headPills = new Product(0.0, "packet of headache pills", 9.75, CategoryProductEnum.NO_TAXED_PRODCUT);
+		importedBoxChocolate = new Product(0.05, " imported box of chocolates", 11.25, CategoryProductEnum.NO_TAXED_PRODCUT);
 		
 		sales.buyProduct(importedProfume);
 		sales.buyProduct(bottleProfumes);
