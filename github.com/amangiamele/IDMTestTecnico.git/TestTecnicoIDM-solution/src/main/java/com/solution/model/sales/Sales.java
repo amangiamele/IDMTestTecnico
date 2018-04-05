@@ -1,9 +1,11 @@
-package com.solution.model;
+package com.solution.model.sales;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.solution.model.product.Product;
 
 public class Sales {
 

@@ -6,9 +6,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.solution.model.CategoryProductEnum;
-import com.solution.model.Product;
-import com.solution.model.Sales;
+import com.solution.model.product.CategoryProductEnum;
+import com.solution.model.product.Product;
+import com.solution.model.sales.Sales;
 
 public class TestSalesInput1 {
 	private Sales sales = new Sales();

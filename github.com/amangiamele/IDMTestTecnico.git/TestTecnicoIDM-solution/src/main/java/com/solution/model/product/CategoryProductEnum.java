@@ -1,4 +1,4 @@
-package com.solution.model;
+package com.solution.model.product;
 
 public class CategoryProductEnum {
 

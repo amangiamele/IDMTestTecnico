@@ -5,9 +5,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.solution.model.CategoryProductEnum;
-import com.solution.model.Product;
-
 public class TestStaticFactoryMethodProduct {
 	private Product book;
 	private Product cdMusic;
