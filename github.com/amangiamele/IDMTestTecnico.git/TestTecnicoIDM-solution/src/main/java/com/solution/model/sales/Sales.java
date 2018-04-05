@@ -26,21 +26,22 @@ public class Sales {
 	}
 
 	public void buyProduct(Product product) {
-		if(product == null) {
-			return;
-		}
-		Integer numberProduct;
-		String productName = product.getName();
-		
-		if(this.productsNumber.containsKey(product.getName())) {
-			numberProduct = this.productsNumber.get(productName);
-			numberProduct = numberProduct + 1;
-			this.productsNumber.put(productName, numberProduct);
-			return;
-		}
-		
 		this.products.add(product);
-		this.productsNumber.put(productName, new Integer(1));
+//		if(product == null) {
+//			return;
+//		}
+//		Integer numberProduct;
+//		String productName = product.getName();
+//		
+//		if(this.productsNumber.containsKey(product.getName())) {
+//			numberProduct = this.productsNumber.get(productName);
+//			numberProduct = numberProduct + 1;
+//			this.productsNumber.put(productName, numberProduct);
+//			return;
+//		}
+//		
+//		this.products.add(product);
+//		this.productsNumber.put(productName, new Integer(1));
 		
 	}
 	

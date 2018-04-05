@@ -14,10 +14,10 @@ public class TestProductInput3 {
 	
 	@Before
 	public void init() {		
-		importedProfume = new Product(0.15, "Imported Profume", 27.99, CategoryProductEnum.TAXED_PRODCUT);
-		bottleProfumes = new Product(0.1, "Bottle Profume", 18.99, CategoryProductEnum.TAXED_PRODCUT);
+		importedProfume = new Product(0.15, "imported bottle of perfume", 27.99, CategoryProductEnum.TAXED_PRODCUT);
+		bottleProfumes = new Product(0.1, "bottle of perfume", 18.99, CategoryProductEnum.TAXED_PRODCUT);
 		headPills = new Product(0.0, "packet of headache pills", 9.75, CategoryProductEnum.NO_TAXED_PRODCUT);
-		importedBoxChocolate = new Product(0.05, " imported box of chocolates", 11.25, CategoryProductEnum.NO_TAXED_PRODCUT);
+		importedBoxChocolate = new Product(0.05, "imported box of chocolates", 11.25, CategoryProductEnum.NO_TAXED_PRODCUT);
 	}
 	
 	@Test
@@ -56,7 +56,27 @@ public class TestProductInput3 {
     }
 	
 	@Test
-    public void priceImportedBoxChocolatenput3() {
+    public void priceImportedBoxChocolateInput3() {
 		assertEquals(11.85 , importedBoxChocolate.getPrice(), 0);
+    }
+	
+	@Test
+    public void printImportedProfumeInput3() {
+		assertEquals("imported bottle of perfume: 32.19", importedProfume.toString());
+    }
+	
+	@Test
+    public void printBottleProfumesInput3() {
+		assertEquals("bottle of perfume: 20.89", bottleProfumes.toString());
+    }
+	
+	@Test
+    public void printHeadPillsInput3() {
+		assertEquals("packet of headache pills: 9.75", headPills.toString());
+    }
+	
+	@Test
+    public void printImportedBoxChocolateInput3() {
+		assertEquals("imported box of chocolates: 11.85", importedBoxChocolate.toString());
     }
 }
